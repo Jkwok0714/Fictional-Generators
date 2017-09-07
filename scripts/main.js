@@ -15,6 +15,7 @@ var printHtmlLog = function(type, ...args) {
 var renderArray = function(array) {
   for (var [i, ele] of array.entries()) {
     printHtmlLog('jsLog', '#', i + 1, ':', ele);
+
   }
 }
 
