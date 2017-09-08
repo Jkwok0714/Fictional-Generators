@@ -19,21 +19,21 @@ var assembleEquipment = function() {
 
   //Generate a name
   if (Math.random() * 50 < 20) {
-    name += part1[Math.floor(Math.random() * part1.length)];
-    name += ' ' + part2[Math.floor(Math.random() * part2.length)];
+    name += getElement(part1);
+    name += ' ' + getElement(part2);
     if (name.length <= 10) {
-      name += ' of ' + part3[Math.floor(Math.random() * part3.length)];
+      name += ' of ' + getElement(part3);
     }
   } else {
-    name += part2[Math.floor(Math.random() * part2.length)];
-    name += ' of ' + part3[Math.floor(Math.random() * part3.length)];
+    name += getElement(part2);
+    name += ' of ' + getElement(part3);
   }
   result.name = name;
 
   //Generate a strength property
   result.strength = Math.floor(Math.random() * 100);
   result.worth = result.strength * 300 + 100;
-  result.origin = locations[Math.floor(Math.random() * locations.length)];
+  result.origin = getElement(locations);
 
   return result;
 }

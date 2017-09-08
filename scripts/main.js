@@ -22,14 +22,14 @@ var renderArray = function(array) {
 var jQueryStuff = function() {
   $('#generateButton').click(() => {
     $('#scrollbox').empty();
-    renderArray(runGenerator($('#numToGenerate').val(), assembleEquipment));
+    renderArray(runGenerator($('#numToGenerate').val(), $('#generatorSelect').val()));
   })
 }
 
 var runGenerator = function(amount, cb) {
   var results = [];
   for (var i = 0; i < amount; i++) {
-    var newObj = cb();
+    var newObj = window[cb]();
     var stringified = '';
     for (var key in newObj) {
       stringified += key + ': ' + newObj[key] + ' - ';
