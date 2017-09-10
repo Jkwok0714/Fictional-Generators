@@ -18,7 +18,7 @@ var assembleEquipment = function() {
   var name = '';
 
   //Generate a name
-  if (Math.random() * 50 < 20) {
+  if (getRandomChance() < 20) {
     name += getElement(part1);
     name += ' ' + getElement(part2);
     if (name.length <= 10) {
@@ -31,7 +31,7 @@ var assembleEquipment = function() {
   result.name = name;
 
   //Generate a strength property
-  result.strength = Math.floor(Math.random() * 100);
+  result.strength = getRandomChance();
   result.worth = result.strength * 300 + 100;
   result.origin = getElement(locations);
 
